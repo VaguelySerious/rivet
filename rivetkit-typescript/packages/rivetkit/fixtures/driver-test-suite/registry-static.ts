@@ -33,6 +33,7 @@ import {
 } from "./actor-db-raw";
 import { onStateChangeActor } from "./actor-onstatechange";
 import { connErrorSerializationActor } from "./conn-error-serialization";
+import { connDrainActor } from "./conn-drain";
 import { counterWithParams } from "./conn-params";
 import { connPreflightVisibilityActor } from "./conn-preflight-visibility";
 import { connStateActor } from "./conn-state";
@@ -293,6 +294,8 @@ export const registry = setup({
 		connStateActor,
 		// From conn-preflight-visibility.ts
 		connPreflightVisibilityActor,
+		// From conn-drain.ts
+		connDrainActor,
 		// From metadata.ts
 		metadataActor,
 		// From vars.ts
