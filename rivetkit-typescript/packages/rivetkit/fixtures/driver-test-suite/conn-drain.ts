@@ -11,5 +11,10 @@ export const connDrainActor = actor({
 	},
 	actions: {
 		ping: () => "pong",
+		work: async (c) => {
+			c.broadcast("workStarted");
+			await new Promise((resolve) => setTimeout(resolve, 300));
+			return "done";
+		},
 	},
 });
